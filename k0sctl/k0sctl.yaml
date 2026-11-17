@@ -1,0 +1,20 @@
+apiVersion: k0sctl.k0sproject.io/v1beta1
+kind: Cluster
+metadata:
+  name: daedalus
+  user: admin
+spec:
+  hosts:
+  - ssh:
+      address: 192.168.50.10
+      user: james
+      port: 22
+    role: controller+worker
+    noTaints: true
+  - ssh:
+      address: 192.168.50.11
+      user: james
+      port: 22
+    role: worker
+  k0s:
+    version: v1.32.3+k0s.0
