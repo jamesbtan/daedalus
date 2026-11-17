@@ -16,5 +16,7 @@ spec:
       user: james
       port: 22
     role: worker
+    installFlags:
+      - --taints="disk=slow:NoSchedule"
   k0s:
-    version: v1.32.3+k0s.0
+    version: v1.37.2+k0s.1
