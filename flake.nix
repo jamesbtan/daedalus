@@ -10,13 +10,6 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      formatter.${system} = pkgs.nixfmt;
-
-      devShells.${system}.default = pkgs.mkShell {
-        # TODO version lock
-        packages = with pkgs; [
-          pyinfra
-        ];
-      };
+      formatter.${system} = pkgs.nixfmt-tree;
     };
 }
